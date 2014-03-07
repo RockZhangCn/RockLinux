@@ -1,0 +1,14 @@
+[user]
+	name = Rock
+	email = rock.zhang.cn@gmail.com
+[color]
+	ui = true
+[alias]
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ci) %C(bold blue)<%an>%Creset' --abbrev-commit --date=local
+	st = status
+	co = checkout
+	ci = commit
+	br = branch
+	rs = reset
+[core]
+	editor = vi
