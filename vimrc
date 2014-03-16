@@ -3,6 +3,7 @@ set nu
 set sw=4
 set tw=100
 set ts=4
+set autoread   " :!e
 set sts=4
 set hls
 set smartindent
