@@ -144,7 +144,7 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-
+alias tree='tree --charset ASCII'
 # Added by rock for qt4.8.2  envrionment.
 #export QTDIR=/home/rock/qt_study/qt.4.8.2_install
 #export PATH=$QTDIR/bin:$PATH
