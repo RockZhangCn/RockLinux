@@ -104,7 +104,7 @@ alias ashell='adisc;acon;adb -s ${IP}:5555 shell'
 alias apull='adb -s ${IP}:5555 pull'
 alias apush='adb -s ${IP}:5555 push'
 ###########################################################
-alias cdh='cd /var/www/'
+alias cdh='cd /home/apache/'
 alias cdt='cd /home/tftproot/'
 alias greps='source /usr/local/bin/greps.sh'
 
@@ -120,6 +120,8 @@ alias cdo='cd /home/rock/gitstudy/oschinaApp'
 alias cdm='cd /home/rock/WorkdAssure/MobileWorkforceManage'
 alias cdc='cd /home/rock/WorkdAssure/MFStorage'
 alias cds='cd /home/rock/IandR'
+alias removeM='sed -i "s///g"'
+
 
 #This is used to patch files.
 alias sd='svn diff --diff-cmd mydiff'

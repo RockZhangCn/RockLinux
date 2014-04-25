@@ -17,6 +17,7 @@ echo "begin to enable rock's config"
 #Save our original config.
 #############################################
 ENV_PATH=~/.config/envronment_config
+
 if [ -f $ENV_PATH ]
 then
 	echo "config dir have been created"
@@ -25,7 +26,7 @@ else
 fi
 
 cd $HOME
-cp .vim .vimrc .bashrc $ENV_PATH -rf 
+cp ~/.vim ~/.vimrc ~/.bashrc $ENV_PATH -rf 
 echo "Save our original config success"
 #################Save end####################
 
@@ -42,6 +43,13 @@ fi
 mkdir -p ~/.vim
 cd $CURPATH
 cp -rf coding ctags cscope com svndiff mydiff rock melddiff ~/.bin
+
+if [ -f ~/.subversion ]
+then
+	echo "svn had been installed"
+else
+	mkdir -p ~/.subversion
+
 cp -rf subversion_config ~/.subversion/config
 cp -rf bashrc ~/.bashrc 
 rm ~/.vim -rf
