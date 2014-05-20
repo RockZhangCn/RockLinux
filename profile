@@ -31,3 +31,8 @@ export ANDROID_SWT=/home/rock/android_src/out/host/linux-x86/framework
 
 export GST_ID3_TAG_ENCODING=GBK:UTF-8:GB18030
 export GST_ID3V2_TAG_ENCODING=GBK:UTF-8:GB18030
+
+#JAVA config
+export JAVA_HOME=/opt/jdk1.8.0_05
+export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+export PATH=$JAVA_HOME/bin:$PATH
