@@ -32,3 +32,8 @@
 [mergetool "bc3"]
     prompt = false
     cmd = bcompare \"$LOCAL\" \"$REMOTE\" 
+
+[credential]
+	helper = store
+[push]
+	default = simple
