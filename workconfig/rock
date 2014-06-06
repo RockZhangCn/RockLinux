@@ -1,0 +1,4 @@
+#!/bin/bash
+
+echo "    //ROCK[10111074] Edited at:`date +"[%Y-%m-%d %H:%M:%S]"`"
+echo "    //Description:"
