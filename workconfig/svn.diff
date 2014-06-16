@@ -1,0 +1,2 @@
+svn diff -c 3000 BrowserSetting.java  查看3000版本所做的修改。
+svn diff -r 3000:3500 COMMITTERS      查看两个版本间的异常。
