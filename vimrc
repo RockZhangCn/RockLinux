@@ -40,6 +40,7 @@ nmap <F7> :set tags=tags;<CR>
 "控制是否打开Taglist
 "Open the tag windows, to show the list of functions.	
 nmap <F8> :TlistT<CR>				
+nmap <silent> <F5> <Esc>:make<CR><CR>:cw<CR>
 "insert the ROCK and current time.
 nmap <F9> :r!com<CR>				
 "insert comment in the code.
