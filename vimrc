@@ -12,9 +12,10 @@ set encoding=utf8
 set langmenu=zh_CN.UTF-8
 set imcmdline
 set fileencoding=gb18030
-set fileencodings=utf-8,gb18030,utf-16,big5
+set fileencodings=utf-8,gb18030,big5
 set showmatch
 set cin 
+set expandtab
 set tabstop=4
 set autochdir
 set smarttab
