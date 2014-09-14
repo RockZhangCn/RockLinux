@@ -26,7 +26,7 @@ echo "5. Generate the cscope-related file"
 cscope -bkq -i cscope.files > /dev/null 2>&1
 
 echo "6. Generate the ctag-related file"
-ctags -R $@ > /dev/null 2>&1
+ctags -h js cpp c C h hpp java cs -R $@ > /dev/null 2>&1
 
 echo "7. Export Environment"
 export CSCOPE_DB=$PWD/cscope.out
