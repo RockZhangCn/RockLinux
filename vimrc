@@ -8,6 +8,10 @@ set sts=4
 set hls
 set smartindent
 set cindent
+set clipboard+=unnamed 
+"set clipboard=unnamedplus, 版本要高于7.3.074 install vim-gnome
+"支持默认的系统剪贴板"
+set clipboard=unnamedplus
 set encoding=utf8
 set langmenu=zh_CN.UTF-8
 set imcmdline
