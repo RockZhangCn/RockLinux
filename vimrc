@@ -25,7 +25,26 @@ set autochdir
 set smarttab
 "set whichwrap=b,s,h,l,<,>,[,]
 colorscheme desert
+
 set autochdir
+""""""""""""""""""""""""""""""""""""""""""
+" Added for python
+set autoindent
+set shiftwidth=4
+set softtabstop=4
+
+      
+filetype plugin on
+"set foldmethod=indent
+nmap <F4> :!python %
+let g:pydiction_location='~/.vim/after/ftplugin/pydiction/complete-dict'
+let g:pydiction_menu_height = 20
+set go=
+let g:ctags_statusline=1
+let generate_tags=1
+let Tlist_File_Fold_Auto_Close=1
+" End for python
+""""""""""""""""""""""""""""""""""""""""""
 
 "这样的话，在源码的最上层目录 ctags -R 创建 tags，就能够方便的进行标签跳转了
 "set tags=/home/rock/ZXV10_B700V2D/android/tags;
@@ -58,7 +77,14 @@ highlight StatusLine cterm=bold ctermfg=white ctermbg=red
 set statusline=\ PATH:\ %{getcwd()}/%f%m%r%h\ \ %=\|\ \ %l,%c\ %p%%\ \ \ \|\ \ ascii=%b,hex=%B%{((&fenc==\"\")?\"\":\"\ \ \|\ \ \".&fenc\ \ )}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+  
+
 source ~/.vim/a.vim
+
+
+if ! has("gui_running")  
+    set t_Co=256  
+endif  
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CSCOPE settings for vim           
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
