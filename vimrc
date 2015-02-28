@@ -25,15 +25,13 @@ set autochdir
 set smarttab
 "set whichwrap=b,s,h,l,<,>,[,]
 colorscheme desert
-
 set autochdir
+
 """"""""""""""""""""""""""""""""""""""""""
 " Added for python
 set autoindent
 set shiftwidth=4
-set softtabstop=4
-
-      
+set softtabstop=4 
 filetype plugin on
 "set foldmethod=indent
 nmap <F4> :!python %
@@ -76,15 +74,8 @@ set laststatus=2      " ×ÜÊÇÏÔÊ¾×´Ì¬À¸
 highlight StatusLine cterm=bold ctermfg=white ctermbg=red
 set statusline=\ PATH:\ %{getcwd()}/%f%m%r%h\ \ %=\|\ \ %l,%c\ %p%%\ \ \ \|\ \ ascii=%b,hex=%B%{((&fenc==\"\")?\"\":\"\ \ \|\ \ \".&fenc\ \ )}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-  
-
 source ~/.vim/a.vim
 
-
-if ! has("gui_running")  
-    set t_Co=256  
-endif  
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CSCOPE settings for vim           
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

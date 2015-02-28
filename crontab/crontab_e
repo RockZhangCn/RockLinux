@@ -1,0 +1,4 @@
+#每天22：20 执行如下命令。
+20 22 * * *  /home/rock/crontab/make.sh
+#每隔四天05：20 执行如下命令。
+20 05 */4 * *  /home/rock/crontab/tbs_make.sh
