@@ -36,3 +36,7 @@ export GST_ID3V2_TAG_ENCODING=GBK:UTF-8:GB18030
 export JAVA_HOME=/opt/jdk1.8.0_05
 export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
 export PATH=$JAVA_HOME/bin:$PATH
+
+
+#Java Font issue.
+export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
