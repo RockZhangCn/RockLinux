@@ -79,31 +79,28 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
+###########################################################
+function git_branch {
+  branch="`git branch 2>/dev/null | grep "^\*" | sed -e "s/^\*\ //"`"
+  if [ "${branch}" != "" ];then
+      if [ "${branch}" = "(no branch)" ];then
+          branch="(`git rev-parse --short HEAD`...)"
+      fi
+      echo "($branch)"
+  fi
+}
+
+export PS1='\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\u@\h:\w$(git_branch)\$ '
+###########################################################
 # some more ls aliases
 alias ll='ls -lF'
+alias lh='ls -lhF'
 alias sl='ls'
-alias la='ls -A'
 alias l='ls -CF'
-###########################################################
-root=/home/rock/Android.4.0.1_Source/
-#root=/home/rock/AML8726/
-alias cda='cd ${root}'
-alias cdf='cd ${root}frameworks'
-alias cdp='cd ~/rockShare'
+alias cdh='cd /var/www/html/'
+alias cdc='cd /home/rock/chromium/blink_db_2.0'
+alias cd2='cd /home/rock/chromium/blink_db_2.0'
 
-#alias cdp='cd ${root}android2.3/source/sdk/android/packages/apps/IPTV'
-#alias cde='cd ${root}external/iptvkit'
-#alias cdf='cd /home/rock/Android.4.0.1_Source/frameworks'
-#alias cdi='cd ${root}android2.3/source/sdk/android/packages/ztestb/mcsp/module/cap/browser'
-###########################################################
-#IP=10.17.161.8
-IP=172.18.10.234
-alias acon='adb connect ${IP}:5555'
-alias adisc='adb disconnect ${IP}:5555'
-alias ashell='adisc;acon;adb -s ${IP}:5555 shell'
-alias apull='adb -s ${IP}:5555 pull'
-alias apush='adb -s ${IP}:5555 push'
-###########################################################
 alias cdh='cd /home/apache/'
 alias cdt='cd /home/tftproot/'
 alias greps='source /usr/local/bin/greps.sh'
@@ -120,15 +117,15 @@ alias cdo='cd /home/rock/gitstudy/oschinaApp'
 alias cdm='cd /home/rock/WorkdAssure/MobileWorkforceManage'
 alias cdc='cd /home/rock/WorkdAssure/MFStorage'
 alias cds='cd /home/rock/IandR'
-alias removeM='sed -i "s///g"'
+alias removeM='sed -i "s/$//g"'
 
 
 #This is used to patch files.
 alias sd='svn diff --diff-cmd mydiff'
 alias mdiff='svn diff --diff-cmd melddiff'
-
 alias lines='find ./ -name "*.c" -o -name "*.hpp" -o -name "*.h" -o -name "*.cpp" -o -name "*.java" -type f | xargs cat  | wc -l'
-alias AError='prebuilt/linux-x86/toolchain/arm-eabi-4.4.0/bin/arm-eabi-addr2line -e out/target/product/c03ref/symbols/system/lib/libiptvkit.so'
+alias AError='/opt/android-ndk-r8e/toolchains/arm-linux-androideabi-4.6/prebuilt/linux-x86_64/bin/arm-linux-androideabi-addr2line -C -f -e /home/rock/chromium/blink_db_2.0/blink_core/lib/chromium_org/out/Release/lib/libmttwebview.so'
+alias AError3='/opt/android-ndk-r8e/toolchains/arm-linux-androideabi-4.6/prebuilt/linux-x86_64/bin/arm-linux-androideabi-addr2line -C -f -e /home/rock/blink_db_3.0/blink_core/lib/chromium_org/out/Default/lib.unstripped/libmttwebview.so'
 ###########################################################
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -147,9 +144,42 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 alias tree='tree --charset ASCII'
-# Added by rock for qt4.8.2  envrionment.
-#export QTDIR=/home/rock/qt_study/qt.4.8.2_install
-#export PATH=$QTDIR/bin:$PATH
+alias uninstall='adb uninstall com.tencent.mtt'
+
+export LANG="en_US.utf8"
+export LC_ALL="en_US.utf8"
+export LC_CTYPE="en_US.utf8"
+#export XMODIFIERS="@im=fcitx"
+#export XIM=fcitx
+#export XIM_PROGRAM=fcitx
+#export CONFIG=debug
+alias killmm='adb shell su -c "am force-stop com.tencent.mm"'
+alias killqb='adb shell su -c "am force-stop com.tencent.mtt"'
+alias killqq='adb shell su -c "am force-stop com.tencent.mobileqq"'
+alias killqz='adb shell su -c "am force-stop com.qzone"'
+alias killde='adb shell su -c "am force-stop com.tencent.x5sdk.demo"'
+alias pull='adb shell su -c "cp /data/data/com.tencent.x5sdk.demo/app_webview/Dnses /sdcard/" ; adb pull /sdcard/Dnses; sqlitebrowser Dnses'
+alias remote='ssh vps -p 28060'
+alias rizhao='ssh root@yimiaozhaopin.com'
+alias cdt='cd /backup/tbs_dev'
+alias cdh='cd /var/www/html/'
+alias pic='feh'
+gsettings set com.canonical.desktop.interface scrollbar-mode overlay-auto
+
+#export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on'
+
+#Android studio ibus config workaround
+IBUS_ENABLE_SYNC_MODE=1 ibus-daemon -xrd
+
+export $(dbus-launch)
+export PATH=$PATH:/home/rock/Developer/depot_tools
+
+# Python virtualenv configuration.
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/workspace_python
+source /usr/local/bin/virtualenvwrapper.sh
+export GRADLE_HOME=/opt/gradle-3.3
+export PATH=$GRADLE_HOME/bin:$PATH
 #export QT_PLUGIN_PATH=$QTDIR/plugins
 #export LD_LIBRARY_PATH=$QTDIR/lib
 #export QT_QWS_FONTDIR=$QTDIR/lib/fonts

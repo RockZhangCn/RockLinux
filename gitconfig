@@ -37,3 +37,5 @@
 	helper = store
 [push]
 	default = simple
+[add]
+	default = all
