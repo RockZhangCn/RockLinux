@@ -1,6 +1,18 @@
+
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
+"Bundle 'Valloric/YouCompleteMe'
+Bundle 'scrooloose/syntastic'
+filetype indent plugin on
+
+
+"before is new configure."
 syntax on
 set nu
-set sw=4
+"set sw=4
 set tw=100
 set ts=4
 set autoread   " :!e
@@ -26,7 +38,6 @@ set smarttab
 "set whichwrap=b,s,h,l,<,>,[,]
 colorscheme desert
 set autochdir
-
 """"""""""""""""""""""""""""""""""""""""""
 " Added for python
 set autoindent
@@ -35,8 +46,8 @@ set softtabstop=4
 filetype plugin on
 "set foldmethod=indent
 nmap <F4> :!python %
-let g:pydiction_location='~/.vim/after/ftplugin/pydiction/complete-dict'
-let g:pydiction_menu_height = 20
+"let g:pydiction_location='~/.vim/after/ftplugin/pydiction/complete-dict'
+"let g:pydiction_menu_height = 20
 set go=
 let g:ctags_statusline=1
 let generate_tags=1
@@ -45,7 +56,6 @@ let Tlist_File_Fold_Auto_Close=1
 """"""""""""""""""""""""""""""""""""""""""
 
 "这样的话，在源码的最上层目录 ctags -R 创建 tags，就能够方便的进行标签跳转了
-"set tags=/home/rock/ZXV10_B700V2D/android/tags;
 set tags=tags;
 "Display the file basic info at the bottom of the viewport.
 "<C-G>
