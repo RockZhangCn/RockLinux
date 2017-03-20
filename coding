@@ -10,7 +10,7 @@ else
 fi
 
 echo "2. File Operation"
-rm -rf cscope.files 
+rm -rf cscope.*
 touch cscope.files
 
 echo "3. Get Filelist"

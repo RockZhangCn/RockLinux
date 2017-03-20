@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [ $# == 0 ]
+then
+    adb shell su -c "rm -f /sdcard/tcpdumpcapture.cap"
+    adb shell su -c "tcpdump -s0 -w /sdcard/tcpdumpcapture.cap"
+else
+    ts=`date +%F-%T`
+    adb pull /sdcard/tcpdumpcapture.cap ${1}__${ts}.cap
+    wireshark ${1}__${ts}.cap &
+fi

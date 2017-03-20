@@ -1,0 +1,13 @@
+#!/bin/bash
+
+$jumpPath
+if [ $# -lt 1 ] 
+then
+    return;
+else
+    jumpPath=$@
+    echo $jumpPath
+fi
+
+
+alias cd${jumpPath}='cd `pwd`'

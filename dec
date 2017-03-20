@@ -1,0 +1,28 @@
+#!/bin/bash
+echo "此脚本只解密mtt*.txt此类文件名格式的加密文件"
+$searchPath
+if [ $# -lt 1 ] 
+then 
+	searchPath=.
+else
+	searchPath=$@
+fi
+
+rm -rf cscope.files 
+touch cscope.files
+
+for x in $searchPath
+do
+	find $x -name "mtt*.txt" >> cscope.files
+done
+
+sed "s#^#$PWD/#g" -i cscope.files
+
+$filelist
+
+while read line; do 
+    filelist=${filelist}" "${line}
+done < cscope.files
+
+rm -rf cscope.files 
+java -jar /home/rock/logenc/decryptMttLog.jar $filelist

@@ -11,7 +11,7 @@
 
 #svn st | grep -v "\.jar" | grep -v "\.apk" | grep -v "\.xml" |grep -v "?" | grep -v "\.conf" |  grep -v "\.so" | grep -v "\.sh" | grep -v "Performing" | grep -v "\<X\>" | grep -v "dest" | grep -v "/1"
 
-svn st | egrep "\.java|\.cc|\.cpp|\.h|\.gypi|\.html" | awk '{print $2}'| xargs svn diff
+svn st | egrep "\.java|\.cc|\.cpp|\.h|\.gypi|\.html"
 
 
 #echo "==========================================================================================================="

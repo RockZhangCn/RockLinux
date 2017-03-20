@@ -1,0 +1,3 @@
+#!/bin/bash
+path=/home/rock/ownCloud/share
+cp $@ $path -rf
