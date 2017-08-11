@@ -1,4 +1,3 @@
 #!/bin/bash
-
-echo "    //ROCK[10111074] Edited at:`date +"[%Y-%m-%d %H:%M:%S]"`"
-echo "    //Description:"
+echo "//VIVO_NEW_FUN_BEGIN: 内核上报监控实现
+echo "// VIVO_NEW_FUN_END
