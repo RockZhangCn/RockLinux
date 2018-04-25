@@ -21,12 +21,18 @@ done
 
 echo "4. Edit Filelist"
 sed "s#^#$PWD/#g" -i cscope.files
+sed '/test/d' -i cscope.files
+sed '/Test/d' -i cscope.files
+sed '/mock/d' -i cscope.files
+sed '/Mock/d' -i cscope.files
 
 echo "5. Generate the cscope-related file"
 cscope -bkq -i cscope.files > /dev/null 2>&1
 
 echo "6. Generate the ctag-related file"
 ctags -h  cpp c C h hpp java -R --fields=+IS $@ > /dev/null 2>&1
+#/home/rock/github/RockLinux/ctags --exclude=*.js -h .cpp.cc.c.C.h.hpp.java -R $@ > /dev/null 2>&1
+#ctags -h  cpp c C h hpp java -R --fields=+IS $searchPath > /dev/null 2>&1
 
 echo "7. Export Environment"
 export CSCOPE_DB=$PWD/cscope.out

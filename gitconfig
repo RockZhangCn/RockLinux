@@ -13,7 +13,8 @@
 
 [difftool "bc3"]
     prompt = false
-    cmd = bcompare \"$LOCAL\" \"$REMOTE\" 
+    #cmd = bcompare \"$LOCAL\" \"$REMOTE\" 
+    cmd = vimdiff \"$LOCAL\" \"$REMOTE\" 
 
 [alias]
 	st = status
@@ -24,14 +25,16 @@
 
 [core]
 	editor = vim
+	quotepath = false
 
 [merge]
     prompt = false
-    tool = bc3 #meld
+    tool = bc3 #meld #vimdiff
 
 [mergetool "bc3"]
     prompt = false
-    cmd = bcompare \"$LOCAL\" \"$REMOTE\" 
+    #cmd = bcompare \"$LOCAL\" \"$REMOTE\" 
+    cmd = vimdiff \"$LOCAL\" \"$REMOTE\" 
 
 [credential]
 	helper = store
@@ -39,3 +42,6 @@
 	default = simple
 [add]
 	default = all
+[oh-my-zsh]
+	hide-status = 1
+

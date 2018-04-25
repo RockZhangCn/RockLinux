@@ -28,8 +28,10 @@ set clipboard=unnamedplus
 set encoding=utf8
 set langmenu=zh_CN.UTF-8
 set imcmdline
-set fileencoding=gb18030
+set fileencoding=utf-8
 set fileencodings=utf-8,gb18030,big5
+set termencoding=utf-8
+set fileformats=unix,dos
 set showmatch
 set cin 
 set expandtab
