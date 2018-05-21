@@ -5,9 +5,17 @@
 	email = rock.zhang.cn@gmail.com
 
 [diff]
-    prompt = false
-    tool = bc3
+  prompt = false
+  tool = bc3 
+  v = vim
 
+[diffv]
+    prompt = false
+
+[diffv "vim"]
+    prompt = false
+    cmd = vimdiff \"$LOCAL\" \"$REMOTE\" 
+    
 [difftool]
     prompt = false
 
