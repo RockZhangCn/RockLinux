@@ -23,7 +23,7 @@ set smartindent
 set cindent
 
 "set clipboard=unnamedplus, 版本要高于7.3.074 install vim-gnome
-"支持默认的系统剪贴板"
+"支持默认的系统剪贴板" Ubuntu20.04 install vim-gtk3 support clipboard.
 set clipboard=unnamedplus
 set encoding=utf8
 set langmenu=zh_CN.UTF-8

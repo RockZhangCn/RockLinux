@@ -87,20 +87,19 @@ source $ZSH/oh-my-zsh.sh
 alias lh='ls -lhF'
 alias ll='ls -l'
 alias vi='vim'
+alias uninstall='adb uninstall com.vivo.browser'
+alias remote='ssh -p 26385 rock@love.rockzhang.com'
 
-alias cdh='cd /home/apache/'
-alias cdc='cd /home/rock/chromium/blink_db_2.0'
-alias cdo='cd /home/rock/ownCloud/share'
-alias cd3='cd /home/rock/blink_db_3.0'
-alias cdr='cd /home/rock/chromium/blink_db_3.0_release_forrom_dev'
-alias cd2='cd /home/rock/chromium/blink_db_2.0'
-alias cdl='cd /home/rock/logenc/temp'
+
+#alias cdr='cd /home/rock/chromium/blink_db_3.0_release_forrom_dev'
+alias cdl='cd /home/rock/log'
 # quick jmp to the target directoies
 alias ..2='cd ../../'
 alias ..3='cd ../../../'
 alias ..4='cd ../../../../'
 alias ..5='cd ../../../../../'
 
+alias cdq='cd /home/rock/data/linux_x86_chromium/src'
 
 alias removeM='sed -i "s/$//g"'
 alias sd='svn diff --diff-cmd mydiff'
